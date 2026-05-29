@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Detective</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="hero">
+            <p class="eyebrow">GitHub Search Client</p>
+            <h1>Dev Detective</h1>
+            <p class="subtitle">Search GitHub profiles, inspect recent repositories, and compare total stars in battle mode.</p>
+        </section>
+
+        <section class="control-panel">
+            <div class="mode-row">
+                <span>Single Search</span>
+                <label class="switch" for="battleToggle">
+                    <input type="checkbox" id="battleToggle">
+                    <span class="slider"></span>
+                </label>
+                <span>Battle Mode</span>
+            </div>
+
+            <form id="searchForm" class="search-box">
+                <input type="text" id="usernameInput" placeholder="GitHub username or profile URL" list="demoUsers" autocomplete="off" required>
+                <input type="text" id="secondUsernameInput" class="hidden" placeholder="Compare username or URL" list="demoUsers" autocomplete="off">
+                <button type="submit">Search</button>
+                <datalist id="demoUsers">
+                    <option value="octocat"></option>
+                    <option value="anmol"></option>
+                    <option value="prodesk-dev"></option>
+                    <option value="torvalds"></option>
+                    <option value="gaearon"></option>
+                    <option value="microsoft"></option>
+                    <option value="vercel"></option>
+                    <option value="facebook"></option>
+                </datalist>
+            </form>
+        </section>
+
+        <div id="loading" class="state-message hidden">
+            <span class="spinner"></span>
+            Loading GitHub data...
+        </div>
+
+        <div id="error" class="state-message error hidden"></div>
+
+        <section id="results" class="results hidden"></section>
+    </main>
+
+    <script src="SCRIPT.JS"></script>
+</body>
+</html>
